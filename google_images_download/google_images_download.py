@@ -400,11 +400,18 @@ class googleimagesdownload:
 
     # Format the object in readable format
     def format_object(self, object):
+        # print("[object] ", object)
         data = object[1]
+        # print("[data] ", data)
+        # from pprint import pprint
+        # pprint(data)
         main = data[3]
+        # print("[main] ", main)
         info = data[9]
+        # print("[info] ", info)
         if info is None:
-            info = data[23]
+            info = data[25]
+            # print("[info] ", info)
         formatted_object = {}
         try:
             formatted_object['image_height'] = main[2]
@@ -418,6 +425,7 @@ class googleimagesdownload:
         except Exception as e:
             print(e)
             return None
+        # print("[formatted_object] ", formatted_object)
         return formatted_object
 
     # function to download single image
